@@ -7,7 +7,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 
 <style>
   :root{
@@ -22,7 +22,6 @@
     --navy-fg:#FAFAFA;
     --accent:#AA5830;
     --gold:#D4AF37;
-    --shadow: 0 8px 24px rgba(11,34,62,.12);
   }
   @media (prefers-color-scheme: dark){
     :root{
@@ -48,99 +47,105 @@
     color:var(--ink); background:var(--bg); -webkit-font-smoothing:antialiased;
   }
   a { text-decoration:none; color:inherit; }
-  .wrap { max-width:680px; margin:0 auto; }
+  .wrap { max-width:720px; margin:0 auto; }
   .section { padding:44px 22px; }
-  .section.alt-bg { background:var(--bg-alt); }
   h1,h2,h3,.serif { font-family:'Noto Serif KR', serif; text-wrap:balance; }
-  .kicker { font-size:13px; font-weight:700; letter-spacing:.12em; color:var(--accent); margin-bottom:10px; text-transform:uppercase; }
 
-  /* masthead */
-  .masthead { position:sticky; top:0; z-index:40; background:color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter:blur(8px); border-bottom:1px solid var(--border); padding:14px 22px; }
+  /* ---- utility bar ---- */
+  .masthead { position:sticky; top:0; z-index:40; background:var(--bg); border-bottom:1px solid var(--border); padding:12px 22px; }
   .masthead .wrap { display:flex; align-items:center; gap:10px; }
-  .masthead .mark { width:26px; height:26px; border-radius:6px; background:var(--navy); color:var(--navy-fg); display:flex; align-items:center; justify-content:center; font-family:'Noto Serif KR',serif; font-weight:900; font-size:14.5px; flex-shrink:0; }
-  .masthead .name { font-size:15.5px; font-weight:700; color:var(--ink); }
-  .masthead .sub-name { font-size:11px; color:var(--ink-faint); letter-spacing:.1em; text-transform:uppercase; }
-  .masthead .back { margin-left:auto; font-size:13px; font-weight:700; color:var(--ink-soft); transition:color .15s ease; }
-  .masthead .back:hover { color:var(--accent); }
+  .masthead .mark { width:24px; height:24px; background:var(--navy); color:var(--navy-fg); display:flex; align-items:center; justify-content:center; font-family:'Noto Serif KR',serif; font-weight:900; font-size:13.5px; flex-shrink:0; }
+  .masthead .name { font-size:13.5px; font-weight:700; color:var(--ink-soft); letter-spacing:.02em; }
+  .masthead .back { margin-left:auto; font-size:12.5px; font-weight:700; color:var(--ink-faint); border-bottom:1px solid var(--border); padding-bottom:1px; transition:color .15s ease, border-color .15s ease; }
+  .masthead .back:hover { color:var(--accent); border-color:var(--accent); }
 
-  /* hero */
-  .hero { padding:52px 22px 36px; text-align:center; }
-  .hero h1 { font-size:32px; font-weight:900; letter-spacing:.01em; color:var(--ink); margin:0 0 12px; }
-  .hero .tagline { font-family:'Noto Serif KR', serif; font-size:17.5px; font-weight:700; color:var(--ink-soft); margin-bottom:16px; }
-  .hero .desc { font-size:14.5px; color:var(--ink-faint); line-height:1.85; max-width:32em; margin:0 auto; }
-
-  /* category section */
-  .cat-head { margin-bottom:22px; }
-  .cat-head .cat-en { font-size:12.5px; font-weight:700; letter-spacing:.14em; color:var(--accent); text-transform:uppercase; margin-bottom:6px; }
-  .cat-head h2 { font-size:22px; font-weight:900; color:var(--ink); margin:0 0 8px; }
-  .cat-head p { font-size:14.5px; color:var(--ink-soft); line-height:1.75; max-width:30em; }
-
-  .archive-grid { display:flex; flex-direction:column; gap:16px; }
-  .archive-card {
-    display:block; background:var(--card); border:1px solid var(--border); border-top:3px solid var(--gold); border-radius:14px;
-    overflow:hidden; box-shadow:var(--shadow); transition:transform .18s ease, box-shadow .18s ease;
+  /* ---- nameplate ---- */
+  .nameplate { text-align:center; padding:46px 22px 0; }
+  .nameplate .eyebrow { font-size:11.5px; font-weight:700; letter-spacing:.24em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:16px; }
+  .nameplate h1 { font-size:40px; font-weight:900; letter-spacing:.03em; color:var(--ink); margin:0; }
+  .nameplate .tagline { font-family:'Noto Serif KR', serif; font-style:italic; font-size:16px; color:var(--ink-soft); margin-top:12px; }
+  .nameplate .desc { font-size:13.5px; color:var(--ink-faint); margin-top:10px; line-height:1.8; }
+  .nameplate .rule-thick { height:4px; background:var(--ink); margin-top:26px; }
+  .nameplate .rule-thin { height:1px; background:var(--ink); margin-top:3px; }
+  .nameplate .meta-row {
+    display:flex; justify-content:space-between; font-size:11px; font-weight:700; color:var(--ink-faint);
+    letter-spacing:.08em; text-transform:uppercase; padding:10px 0 40px;
   }
-  .archive-card:hover { transform:translateY(-3px); box-shadow:0 14px 32px rgba(11,34,62,.16); }
-  .archive-card:active { transform:translateY(0); }
-  .archive-card .thumb { width:100%; aspect-ratio:16/9; object-fit:cover; object-position:50% 20%; display:block; background:var(--bg-alt); transition:transform .35s ease; }
-  .archive-card:hover .thumb { transform:scale(1.045); }
-  .archive-card .body { padding:16px 18px 18px; }
-  .archive-card .src { font-size:12px; font-weight:700; color:var(--ink-faint); letter-spacing:.04em; text-transform:uppercase; margin-bottom:7px; }
-  .archive-card h3 { font-size:16px; font-weight:900; color:var(--ink); line-height:1.5; margin:0 0 8px; }
-  .archive-card .go { font-size:13px; font-weight:700; color:var(--accent); display:flex; align-items:center; gap:5px; }
-  .archive-card .go .arrow { transition:transform .15s ease; }
-  .archive-card:hover .go .arrow { transform:translateX(3px); }
 
-  /* footer cta */
-  .footer-cta { text-align:center; padding:52px 22px 60px; }
-  .footer-cta p { font-size:14.5px; color:var(--ink-soft); margin-bottom:20px; line-height:1.8; }
+  /* ---- section flag ---- */
+  .cat-head { padding-bottom:20px; margin-bottom:26px; border-bottom:3px double var(--ink); }
+  .cat-head .cat-en { font-size:12px; font-weight:700; letter-spacing:.2em; color:var(--accent); text-transform:uppercase; margin-bottom:8px; }
+  .cat-head h2 { font-size:23px; font-weight:900; color:var(--ink); margin:0 0 9px; }
+  .cat-head p { font-size:14px; color:var(--ink-soft); line-height:1.75; max-width:32em; }
+
+  /* ---- article list ---- */
+  .archive-grid { display:flex; flex-direction:column; }
+  .archive-card { display:block; padding:26px 0; border-top:1px solid var(--border); }
+  .archive-grid .archive-card:first-child { border-top:none; padding-top:0; }
+  .archive-grid .archive-card:last-child { border-bottom:1px solid var(--border); }
+  .archive-card .thumb { width:100%; aspect-ratio:16/9; object-fit:cover; object-position:50% 20%; display:block; background:var(--bg-alt); border:1px solid var(--border); }
+  .archive-card .cap { font-family:'Noto Serif KR',serif; font-style:italic; font-size:12px; color:var(--ink-faint); padding:9px 1px 0; }
+  .archive-card h3 { font-size:17px; font-weight:900; color:var(--ink); line-height:1.5; margin:6px 0 10px; transition:color .15s ease; }
+  .archive-card:hover h3 { color:var(--accent); }
+  .archive-card .go { font-size:12.5px; font-weight:700; color:var(--accent); text-decoration:underline; text-underline-offset:3px; }
+
+  /* footer */
+  .footer-cta { text-align:center; padding:20px 22px 60px; border-top:4px double var(--ink); }
+  .footer-cta .wrap { padding-top:44px; }
+  .footer-cta p { font-family:'Noto Serif KR',serif; font-size:16px; font-weight:700; color:var(--ink); margin-bottom:22px; }
   .cta-btn {
-    display:inline-block; width:100%; max-width:360px;
+    display:inline-block; width:100%; max-width:340px;
     background:var(--navy); color:var(--navy-fg); text-align:center;
-    font-size:16px; font-weight:700; padding:15px 20px; border-radius:8px;
-    transition:transform .15s ease, box-shadow .15s ease;
+    font-size:15.5px; font-weight:700; padding:14px 20px;
+    transition:opacity .15s ease;
   }
-  .cta-btn:hover { box-shadow:0 10px 24px rgba(11,34,62,.22); }
+  .cta-btn:hover { opacity:.88; }
   .cta-btn:active { transform:translateY(1px); }
-  .fine-print { font-size:12.5px; color:var(--ink-faint); text-align:center; margin-top:14px; line-height:1.7; }
+  .fine-print { font-size:12px; color:var(--ink-faint); text-align:center; margin-top:16px; line-height:1.7; }
 
   @media (min-width:560px){
-    .hero h1 { font-size:38px; }
-    .archive-grid { display:grid; grid-template-columns:1fr 1fr; }
-    .archive-grid .archive-card:first-child { grid-column:1 / -1; }
-    .archive-grid .archive-card:first-child .thumb { aspect-ratio:21/9; }
+    .nameplate h1 { font-size:52px; }
+    .archive-grid { display:grid; grid-template-columns:1fr 1fr; column-gap:32px; }
+    .archive-grid .archive-card:nth-child(2),
+    .archive-grid .archive-card:nth-child(3) { border-top:none; padding-top:26px; }
+    .archive-grid .archive-card:first-child {
+      grid-column:1 / -1; display:grid; grid-template-columns:1.3fr 1fr; column-gap:28px; align-items:start;
+      padding-bottom:26px; border-bottom:1px solid var(--border);
+    }
+    .archive-grid .archive-card:first-child .thumb { aspect-ratio:16/10; }
+    .archive-grid .archive-card:first-child h3 { font-size:21px; margin-top:0; }
   }
 </style>
 </head>
 <body>
 
-<!-- ===== MASTHEAD ===== -->
+<!-- ===== UTILITY BAR ===== -->
 <div class="masthead">
   <div class="wrap">
     <div class="mark">S</div>
-    <div>
-      <div class="name">스텝업컴퍼니</div>
-      <div class="sub-name">Media Education</div>
-    </div>
-    <a class="back" href="index.html.html">← 마스터클래스</a>
+    <div class="name">스텝업컴퍼니</div>
+    <a class="back" href="https://rebirth1105-beep.github.io/stepupaiproject1/masterclass/index.html">← 마스터클래스</a>
   </div>
 </div>
 
-<!-- ===== HERO ===== -->
-<section class="hero">
+<!-- ===== NAMEPLATE ===== -->
+<div class="nameplate">
   <div class="wrap">
-    <div class="kicker">Step Up Company · Press Reference</div>
+    <div class="eyebrow">Step Up Company · Press Reference</div>
     <h1>BYLINE ARCHIVE</h1>
     <div class="tagline">기사는, 이렇게 완성됩니다</div>
-    <p class="desc">
-      실제 언론사에 게재된 기사들을 형식에 따라<br>
-      세 갈래로 정리했습니다.
-    </p>
+    <p class="desc">실제 언론사에 게재된 기사들을 형식에 따라 세 갈래로 정리했습니다.</p>
+    <div class="rule-thick"></div>
+    <div class="rule-thin"></div>
+    <div class="meta-row">
+      <span>Press Reference Archive</span>
+      <span>No. 01–09</span>
+    </div>
   </div>
-</section>
+</div>
 
 <!-- ===== 01. BRAND STORY ===== -->
-<section class="section alt-bg">
+<section class="section">
   <div class="wrap">
     <div class="cat-head">
       <div class="cat-en">01 · Brand Story</div>
@@ -150,27 +155,23 @@
     <div class="archive-grid">
       <a class="archive-card" href="https://www.kairnews.com/news/433772" target="_blank" rel="noopener">
         <img class="thumb" src="https://www.ehom.kr/news/2025/10/13/7a21469b1a7392a4da068b1dd49c2cb7201954.jpg" alt="" loading="lazy">
-        <div class="body">
-          <div class="src">한국AI부동산신문</div>
+        <div>
+          <div class="cap">한국AI부동산신문</div>
           <h3>Dubai Real Estate: Global Expert Nawon Stella Lee Delivers "Real-World" Insights</h3>
-          <div class="go">기사 보기<span class="arrow">→</span></div>
+          <div class="go">기사 전문 보기</div>
         </div>
       </a>
       <a class="archive-card" href="https://www.koreayouthdaily.com/news/462203" target="_blank" rel="noopener">
         <img class="thumb" src="https://www.koreayouthdaily.com/modules/news/upload/news/s135024/2026/01/25/3bd84c5ad8497130ab620c7443ba6de3182925.jpg" alt="" loading="lazy">
-        <div class="body">
-          <div class="src">대한청년일보</div>
-          <h3>기회는 기다림이 아니라 선택에서 시작된다, 애스엔비즈 김민승 대표의 방식</h3>
-          <div class="go">기사 보기<span class="arrow">→</span></div>
-        </div>
+        <div class="cap">대한청년일보</div>
+        <h3>기회는 기다림이 아니라 선택에서 시작된다, 애스엔비즈 김민승 대표의 방식</h3>
+        <div class="go">기사 전문 보기</div>
       </a>
       <a class="archive-card" href="https://www.kpeoplefocus.co.kr/news/893321" target="_blank" rel="noopener">
         <img class="thumb" src="https://www.ehom.kr/news/2025/11/03/f48bb96639dd0443ff85ffe85d075351232826_thumb.jpg" alt="" loading="lazy">
-        <div class="body">
-          <div class="src">K People Focus</div>
-          <h3>사람탐험가 '지나운서', 스레드에서 시작된 연결이 삶을 바꾸다</h3>
-          <div class="go">기사 보기<span class="arrow">→</span></div>
-        </div>
+        <div class="cap">K People Focus</div>
+        <h3>사람탐험가 '지나운서', 스레드에서 시작된 연결이 삶을 바꾸다</h3>
+        <div class="go">기사 전문 보기</div>
       </a>
     </div>
   </div>
@@ -185,36 +186,32 @@
       <p>행사·활동·성과를 사실 중심으로 정리한 기사입니다. 과장 없이 있는 그대로의 사실을 전달하는 방식입니다.</p>
     </div>
     <div class="archive-grid">
-      <a class="archive-card" href="https://www.youthassembly.kr/news/977429" target="_blank" rel="noopener">
-        <img class="thumb" src="https://www.ehom.kr/news/2026/07/25/88248ee4973201bf5220467497145440201731_thumb.png" alt="" loading="lazy">
-        <div class="body">
-          <div class="src">유스연합</div>
-          <h3>강의만 잘해선 부족하다… '스레드'로 모객하는 강사의 비밀 공개</h3>
-          <div class="go">기사 보기<span class="arrow">→</span></div>
+      <a class="archive-card" href="https://www.koreayouthdaily.com/news/433768" target="_blank" rel="noopener">
+        <img class="thumb" style="object-position:50% 0%" src="https://www.koreayouthdaily.com/modules/news/upload/news/s135024/2025/10/13/a55502054d0eef584db33f70353ed761195721.png" alt="" loading="lazy">
+        <div>
+          <div class="cap">대한청년일보</div>
+          <h3>Learn, collaborate, and grow with Notion... "Let's Notion Survival," a youth problem-solving project, will be held on October 18th.</h3>
+          <div class="go">기사 전문 보기</div>
         </div>
       </a>
       <a class="archive-card" href="https://newsyonhap.com/news/118592" target="_blank" rel="noopener">
         <img class="thumb" src="https://www.ehom.kr/news/2026/08/10/1ed348f4f7d9dcb326b272a65d50ccb2123723_thumb.jpg" alt="" loading="lazy">
-        <div class="body">
-          <div class="src">뉴스N연합</div>
-          <h3>"엄마도 다시 주인공이 될 수 있습니다"… '엄마, 다시 주인공이 되다' 1기 성료</h3>
-          <div class="go">기사 보기<span class="arrow">→</span></div>
-        </div>
+        <div class="cap">뉴스N연합</div>
+        <h3>"엄마도 다시 주인공이 될 수 있습니다"… '엄마, 다시 주인공이 되다' 1기 성료</h3>
+        <div class="go">기사 전문 보기</div>
       </a>
       <a class="archive-card" href="https://www.enterstar.net/news/506157" target="_blank" rel="noopener">
         <img class="thumb" src="https://www.ehom.kr/news/2026/06/01/7050546e35f250ae9ec4997266911234000443_thumb.png" alt="" loading="lazy">
-        <div class="body">
-          <div class="src">엔터스타뉴스</div>
-          <h3>'SHOW ME THE AI' AI 데모데이, 전략적 MOU 통해 청년 창업·AI 생태계 확장 나선다</h3>
-          <div class="go">기사 보기<span class="arrow">→</span></div>
-        </div>
+        <div class="cap">엔터스타뉴스</div>
+        <h3>'SHOW ME THE AI' AI 데모데이, 전략적 MOU 통해 청년 창업·AI 생태계 확장 나선다</h3>
+        <div class="go">기사 전문 보기</div>
       </a>
     </div>
   </div>
 </section>
 
 <!-- ===== 03. INSIGHT COLUMN ===== -->
-<section class="section alt-bg">
+<section class="section">
   <div class="wrap">
     <div class="cat-head">
       <div class="cat-en">03 · Insight Column</div>
@@ -224,27 +221,23 @@
     <div class="archive-grid">
       <a class="archive-card" href="https://www.koreayouthdaily.com/news/529421" target="_blank" rel="noopener">
         <img class="thumb" src="https://www.ehom.kr/news/2025/08/17/aa56836dac09049423d0c977fa2a4241160115.jpg" alt="" loading="lazy">
-        <div class="body">
-          <div class="src">대한청년일보</div>
+        <div>
+          <div class="cap">대한청년일보</div>
           <h3>[서진욱의 GEO·AI Search] AI 검색 시대, 기업은 왜 GEO에 주목해야 하는가</h3>
-          <div class="go">기사 보기<span class="arrow">→</span></div>
+          <div class="go">기사 전문 보기</div>
         </div>
       </a>
       <a class="archive-card" href="https://www.koreayouthdaily.com/news/500371" target="_blank" rel="noopener">
         <img class="thumb" src="https://www.koreayouthdaily.com/modules/news/upload/news/s135024/2026/05/15/dd54ca0ea4c4d76537b812dcc43c4749003120.jpg" alt="" loading="lazy">
-        <div class="body">
-          <div class="src">대한청년일보</div>
-          <h3>[추장호 칼럼] 신용점수가 낮아도 신청 수 있는 정책자금이 있습니다 — 소진공 신용취약소상공인자금 완전 정리</h3>
-          <div class="go">기사 보기<span class="arrow">→</span></div>
-        </div>
+        <div class="cap">대한청년일보</div>
+        <h3>[추장호 칼럼] 신용점수가 낮아도 신청 수 있는 정책자금이 있습니다 — 소진공 신용취약소상공인자금 완전 정리</h3>
+        <div class="go">기사 전문 보기</div>
       </a>
       <a class="archive-card" href="https://www.todaytimes.co.kr/news/508185" target="_blank" rel="noopener">
         <img class="thumb" src="https://www.ehom.kr/news/2026/06/06/2f73681634f6eddcb63337a3ed594ca1130127.png" alt="" loading="lazy">
-        <div class="body">
-          <div class="src">투데이타임즈</div>
-          <h3>[황현수 Manavisor의 경제칼럼] 달러 패권을 위한 새로운 금융 질서의 설계</h3>
-          <div class="go">기사 보기<span class="arrow">→</span></div>
-        </div>
+        <div class="cap">투데이타임즈</div>
+        <h3>[황현수 Manavisor의 경제칼럼] 달러 패권을 위한 새로운 금융 질서의 설계</h3>
+        <div class="go">기사 전문 보기</div>
       </a>
     </div>
   </div>
@@ -254,7 +247,7 @@
 <section class="footer-cta">
   <div class="wrap">
     <p>다음은 당신의 이름이 실릴 차례입니다.</p>
-    <a class="cta-btn" href="index.html.html#apply">내 이름으로 된 기사 완성하기</a>
+    <a class="cta-btn" href="https://rebirth1105-beep.github.io/stepupaiproject1/masterclass/index.html#apply">내 이름으로 된 기사 완성하기</a>
     <p class="fine-print">※ 형식과 구성을 참고할 수 있도록 정리한 예시입니다.</p>
   </div>
 </section>
