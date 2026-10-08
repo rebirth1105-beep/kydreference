@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>People &amp; Stories</title>
+<meta name="description" content="자기 길 위에서 이야기를 만든 사람들. 언론에 소개된 인물·현장·칼럼 기사 모음.">
+<meta property="og:title" content="People & Stories — 이야기를 만든 사람들">
+<meta property="og:description" content="언론에 소개된 인물·현장·칼럼 기사 아홉 편을 한 곳에 모았습니다.">
+<meta property="og:image" content="https://rebirth1105-beep.github.io/kydreference/images/5b91f0cb989ca5f1c6b861fefef86972012535.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#F7F5F1; --bg-alt:#EEEAE3; --card:#FFFFFF; --rule:#D9D3C8;
+    --ink:#14110E; --ink-soft:#4D4740; --ink-faint:#8C857B;
+    --accent:#9C4A24; --img-bg:#E4DFD6;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg:#12100E; --bg-alt:#1B1815; --card:#1E1B18; --rule:#35302A;
+      --ink:#F3EFE8; --ink-soft:#BDB5AA; --ink-faint:#857D72;
+      --accent:#D98A5F; --img-bg:#2A2622;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg:#12100E; --bg-alt:#1B1815; --card:#1E1B18; --rule:#35302A;
+    --ink:#F3EFE8; --ink-soft:#BDB5AA; --ink-faint:#857D72;
+    --accent:#D98A5F; --img-bg:#2A2622;
+  }
+  * { box-sizing:border-box; }
+  html { -webkit-text-size-adjust:100%; }
+  body { margin:0; background:var(--bg); color:var(--ink); font-family:'Noto Sans KR',system-ui,sans-serif; line-height:1.6; word-break:keep-all; }
+  a { color:inherit; text-decoration:none; }
+  img { display:block; max-width:100%; }
+  .wrap { max-width:1120px; margin:0 auto; padding:0 16px; }
+  @media (min-width:720px) { .wrap { padding:0 32px; } }
+  .serif { font-family:'Noto Serif KR',Georgia,serif; }
+
+  /* masthead */
+  .mast { border-bottom:1px solid var(--rule); }
+  .mast .wrap { display:flex; justify-content:space-between; align-items:center; height:56px; font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--ink-faint); }
+  .mast b { color:var(--ink); font-weight:700; letter-spacing:.24em; }
+
+  /* hero */
+  .hero { padding:72px 0 56px; border-bottom:1px solid var(--rule); }
+  .eyebrow { font-size:12px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--accent); margin:0 0 20px; }
+  .hero h1 { font-family:'Noto Serif KR',Georgia,serif; font-weight:900; font-size:clamp(34px,7vw,64px); line-height:1.18; letter-spacing:-.02em; margin:0 0 24px; }
+  .hero p.lede { font-size:clamp(16px,2.2vw,18px); color:var(--ink-soft); max-width:560px; margin:0 0 40px; }
+  .outlets { display:flex; flex-wrap:wrap; gap:8px 0; align-items:center; font-size:13px; color:var(--ink-soft); }
+  .outlets span.lab { font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--ink-faint); margin-right:16px; }
+  .outlets span.o { padding:0 14px; border-left:1px solid var(--rule); }
+  .outlets span.o:first-of-type { border-left:0; padding-left:0; }
+
+  /* sections */
+  section.part { padding:72px 0 16px; }
+  .part-head { display:grid; gap:8px; margin-bottom:36px; }
+  @media (min-width:860px) { .part-head { grid-template-columns:220px 1fr; align-items:end; gap:32px; } }
+  .part-no { font-family:'Noto Serif KR',serif; font-size:13px; color:var(--accent); letter-spacing:.12em; }
+  .part-head h2 { font-family:'Noto Serif KR',serif; font-size:clamp(26px,4vw,36px); font-weight:700; margin:4px 0 0; letter-spacing:-.01em; }
+  .part-head p { margin:0; color:var(--ink-soft); font-size:15px; max-width:520px; }
+
+  .meta { display:flex; justify-content:space-between; align-items:center; gap:12px; font-size:12px; color:var(--ink-faint); padding-top:14px; margin-top:auto; border-top:1px solid var(--rule); }
+  .meta .read { color:var(--ink); font-weight:500; white-space:nowrap; }
+  .meta .read::after { content:" ↗"; color:var(--accent); }
+  a.story:hover .read, a.story:focus-visible .read { color:var(--accent); }
+  a.story:focus-visible { outline:2px solid var(--accent); outline-offset:4px; }
+
+  /* people */
+  .people { display:grid; gap:40px; }
+  @media (min-width:720px) { .people { grid-template-columns:repeat(3,1fr); gap:28px; } }
+  .person { display:flex; flex-direction:column; }
+  .person .ph { aspect-ratio:4/5; overflow:hidden; background:var(--img-bg); margin-bottom:20px; }
+  .person .ph img { width:100%; height:100%; object-fit:cover; object-position:50% 18%; transition:transform .6s ease; }
+  a.story:hover .ph img { transform:scale(1.03); }
+  .role { font-size:12px; letter-spacing:.06em; color:var(--accent); font-weight:700; margin:0 0 6px; }
+  .person h3 { font-family:'Noto Serif KR',serif; font-size:26px; font-weight:700; margin:0 0 14px; letter-spacing:-.01em; }
+  .person h3 small { font-family:'Noto Sans KR',sans-serif; font-size:13px; font-weight:400; color:var(--ink-faint); margin-left:6px; letter-spacing:0; }
+  .quote { font-family:'Noto Serif KR',serif; font-size:16px; line-height:1.7; color:var(--ink-soft); margin:0 0 18px; padding-left:14px; border-left:2px solid var(--accent); }
+  .quote.en { font-style:italic; }
+  .headline { font-size:13px; color:var(--ink-faint); margin:0 0 16px; }
+
+  /* field */
+  .field { display:grid; gap:28px; }
+  @media (min-width:720px) { .field { grid-template-columns:repeat(3,1fr); } }
+  .event { display:flex; flex-direction:column; background:var(--card); border:1px solid var(--rule); }
+  .event .ph { aspect-ratio:3/2; overflow:hidden; background:var(--img-bg); }
+  .event .ph img { width:100%; height:100%; object-fit:cover; transition:transform .6s ease; }
+  .event .body { padding:20px 20px 18px; display:flex; flex-direction:column; flex:1; }
+  .event .kind { font-size:12px; color:var(--accent); font-weight:700; letter-spacing:.06em; margin:0 0 6px; }
+  .event h3 { font-family:'Noto Serif KR',serif; font-size:20px; font-weight:700; margin:0 0 10px; line-height:1.4; }
+  .event p { font-size:14px; color:var(--ink-soft); margin:0 0 18px; }
+
+  /* insight */
+  .cols { border-top:2px solid var(--ink); }
+  .col { display:grid; grid-template-columns:64px 1fr; gap:16px; padding:24px 0; border-bottom:1px solid var(--rule); align-items:start; }
+  @media (min-width:720px) { .col { grid-template-columns:88px 1fr 200px; gap:28px; align-items:center; } }
+  .col .ph { width:64px; height:80px; overflow:hidden; background:var(--img-bg); }
+  @media (min-width:720px) { .col .ph { width:88px; height:110px; } }
+  .col .ph img { width:100%; height:100%; object-fit:cover; object-position:50% 15%; }
+  .col .series { font-size:12px; color:var(--accent); font-weight:700; letter-spacing:.04em; margin:0 0 6px; }
+  .col h3 { font-family:'Noto Serif KR',serif; font-size:clamp(17px,2.4vw,21px); font-weight:700; line-height:1.45; margin:0 0 8px; }
+  .col .by { font-size:13px; color:var(--ink-soft); margin:0; }
+  .col .side { grid-column:2; font-size:12px; color:var(--ink-faint); display:flex; gap:12px; flex-wrap:wrap; }
+  @media (min-width:720px) { .col .side { grid-column:auto; flex-direction:column; gap:4px; text-align:right; } }
+  .col .side .read { color:var(--ink); font-weight:500; }
+  .col .side .read::after { content:" ↗"; color:var(--accent); }
+  a.col:hover h3 { color:var(--accent); }
+
+  /* footer */
+  footer { margin-top:88px; border-top:1px solid var(--rule); padding:40px 0 56px; }
+  footer .wrap { display:flex; flex-wrap:wrap; justify-content:space-between; gap:16px; font-size:13px; color:var(--ink-faint); }
+  footer .note { max-width:520px; }
+  footer b { color:var(--ink); font-weight:700; letter-spacing:.2em; font-size:12px; }
+</style>
+</head>
+<body>
+
+<header class="mast">
+  <div class="wrap">
+    <span><b>STEP UP</b>&nbsp;&nbsp;Stories</span>
+    <span>No. 01 — 09</span>
+  </div>
+</header>
+
+<div class="wrap">
+  <section class="hero">
+    <p class="eyebrow">People &amp; Stories</p>
+    <h1>자기 길 위에서<br>이야기를 만든 사람들</h1>
+    <p class="lede">필드 위의 골프 코치부터 두바이의 부동산 전문가, 경제를 읽는 칼럼니스트까지. 언론에 소개된 아홉 편의 이야기를 한 곳에 모았습니다.</p>
+    <div class="outlets">
+      <span class="lab">Featured in</span>
+      <span class="o">대한청년일보</span>
+      <span class="o">한국AI부동산신문</span>
+      <span class="o">뉴스N연합</span>
+      <span class="o">엔터스타뉴스</span>
+      <span class="o">투데이타임즈</span>
+    </div>
+  </section>
+
+  <!-- 01 People -->
+  <section class="part" aria-labelledby="h-people">
+    <div class="part-head">
+      <div><div class="part-no">01 — People</div><h2 id="h-people">사람</h2></div>
+      <p>한 사람의 경력과 선택, 그리고 지금 하고 있는 일에 대한 이야기.</p>
+    </div>
+    <div class="people">
+      <a class="story person" href="https://www.koreayouthdaily.com/news/393879" target="_blank" rel="noopener">
+        <div class="ph"><img src="../images/5b91f0cb989ca5f1c6b861fefef86972012535.jpg" alt="고나혜 프로 프로필 사진" loading="lazy" style="object-position:58% 30%"></div>
+        <p class="role">프로골퍼 · KLPGA 정규투어 출신</p>
+        <h3>고나혜</h3>
+        <p class="quote">“스윙을 바꾸는 것도 중요하지만 저는 그 사람의 마음을 먼저 이해하고 싶어요.”</p>
+        <p class="headline">고나혜 프로, “골프는 내 인생을 바꾼 언어입니다”</p>
+        <div class="meta"><span>대한청년일보 · 2025.07</span><span class="read">기사 보기</span></div>
+      </a>
+      <a class="story person" href="https://www.kairnews.com/news/433772" target="_blank" rel="noopener">
+        <div class="ph"><img src="../images/7a21469b1a7392a4da068b1dd49c2cb7201954.jpg" alt="이나원 프로필 사진" loading="lazy"></div>
+        <p class="role">두바이 부동산 전문가</p>
+        <h3>이나원<small>Nawon Stella Lee</small></h3>
+        <p class="quote en">“I thought real estate wasn’t just an asset, but rather a way to design the way people live.”</p>
+        <p class="headline">Dubai Real Estate: Global Expert Nawon Stella Lee Delivers “Real-World” Insights</p>
+        <div class="meta"><span>한국AI부동산신문 · 2025.10</span><span class="read">기사 보기</span></div>
+      </a>
+      <a class="story person" href="https://www.koreayouthdaily.com/news/462203" target="_blank" rel="noopener">
+        <div class="ph"><img src="../images/3bd84c5ad8497130ab620c7443ba6de3182925.jpg" alt="김민승 대표 프로필 사진" loading="lazy"></div>
+        <p class="role">애스엔비즈 대표</p>
+        <h3>김민승</h3>
+        <p class="quote">“기회는 사람이 사람에게 주는 거다.”</p>
+        <p class="headline">기회는 기다림이 아니라 선택에서 시작된다, 애스엔비즈 김민승 대표의 방식</p>
+        <div class="meta"><span>대한청년일보 · 2026.01</span><span class="read">기사 보기</span></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- 02 Field -->
+  <section class="part" aria-labelledby="h-field">
+    <div class="part-head">
+      <div><div class="part-no">02 — Field</div><h2 id="h-field">현장</h2></div>
+      <p>사람들이 모여 무언가를 만들어낸 자리. 행사와 프로젝트의 기록.</p>
+    </div>
+    <div class="field">
+      <a class="story event" href="https://newsyonhap.com/news/118592" target="_blank" rel="noopener">
+        <div class="ph"><img src="../images/1ed348f4f7d9dcb326b272a65d50ccb2123723.jpg" alt="'엄마, 다시 주인공이 되다' 참가자들이 완성된 책을 들고 있는 모습" loading="lazy"></div>
+        <div class="body">
+          <p class="kind">스토리북 프로젝트</p>
+          <h3>‘엄마, 다시 주인공이 되다’ 1기 성료</h3>
+          <p>엄마라는 역할에 가려져 있던 한 사람의 이야기를 책으로 엮어낸 시간. “책은 끝이 아니라 새로운 시작입니다.”</p>
+          <div class="meta"><span>뉴스N연합 · 2026.08</span><span class="read">기사 보기</span></div>
+        </div>
+      </a>
+      <a class="story event" href="https://www.enterstar.net/news/506157" target="_blank" rel="noopener">
+        <div class="ph"><img src="../images/7050546e35f250ae9ec4997266911234000443.png" alt="SHOW ME THE AI 업무협약식 기념 사진" loading="lazy"></div>
+        <div class="body">
+          <p class="kind">AI 창업 데모데이</p>
+          <h3>SHOW ME THE AI, 전략적 업무협약 체결</h3>
+          <p>AI 창업가와 투자사, 스타트업 플랫폼, 미디어가 손잡고 청년 AI 창업 생태계 확장에 나섰습니다.</p>
+          <div class="meta"><span>엔터스타뉴스 · 2026.06</span><span class="read">기사 보기</span></div>
+        </div>
+      </a>
+      <a class="story event" href="https://www.koreayouthdaily.com/news/433768" target="_blank" rel="noopener">
+        <div class="ph"><img src="../images/a55502054d0eef584db33f70353ed761195721.png" alt="어서노션 SURVIVOR 행사 포스터" loading="lazy" style="object-position:50% 0%"></div>
+        <div class="body">
+          <p class="kind">청년 실전 프로젝트</p>
+          <h3>어서노션 SURVIVOR</h3>
+          <p>스펙보다 실력. 청년들이 노션으로 직접 문제를 풀며 “해봤다”고 말할 수 있는 경험을 쌓는 프로젝트.</p>
+          <div class="meta"><span>대한청년일보 · 2025.10</span><span class="read">기사 보기</span></div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- 03 Insight -->
+  <section class="part" aria-labelledby="h-insight">
+    <div class="part-head">
+      <div><div class="part-no">03 — Insight</div><h2 id="h-insight">관점</h2></div>
+      <p>각 분야 전문가가 자기 언어로 풀어낸 칼럼.</p>
+    </div>
+    <div class="cols">
+      <a class="story col" href="https://www.koreayouthdaily.com/news/529421" target="_blank" rel="noopener">
+        <div class="ph"><img src="../images/aa56836dac09049423d0c977fa2a4241160115.jpg" alt="서진욱 프로필 사진" loading="lazy"></div>
+        <div>
+          <p class="series">서진욱의 GEO·AI Search</p>
+          <h3>AI 검색 시대, 기업은 왜 GEO에 주목해야 하는가</h3>
+          <p class="by">서진욱 · 대한청년일보 대표</p>
+        </div>
+        <div class="side"><span>대한청년일보 · 2026.08</span><span class="read">칼럼 보기</span></div>
+      </a>
+      <a class="story col" href="https://www.todaytimes.co.kr/news/508185" target="_blank" rel="noopener">
+        <div class="ph"><img src="../images/2f73681634f6eddcb63337a3ed594ca1130127.png" alt="황현수 프로필 사진" loading="lazy"></div>
+        <div>
+          <p class="series">황현수 Manavisor의 경제칼럼</p>
+          <h3>달러 패권을 위한 새로운 금융 질서의 설계</h3>
+          <p class="by">황현수 · Manavisor</p>
+        </div>
+        <div class="side"><span>투데이타임즈 · 2026.06</span><span class="read">칼럼 보기</span></div>
+      </a>
+      <a class="story col" href="https://www.koreayouthdaily.com/news/500371" target="_blank" rel="noopener">
+        <div class="ph"><img src="../images/dd54ca0ea4c4d76537b812dcc43c4749003120.jpg" alt="추장호 프로필 사진" loading="lazy"></div>
+        <div>
+          <p class="series">추장호 칼럼</p>
+          <h3>신용점수가 낮아도 신청할 수 있는 정책자금이 있습니다</h3>
+          <p class="by">추장호 · 오너스 경영연구소 팀장</p>
+        </div>
+        <div class="side"><span>대한청년일보 · 2026.05</span><span class="read">칼럼 보기</span></div>
+      </a>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span><b>STEP UP</b>&nbsp;&nbsp;Stories</span>
+    <span class="note">각 기사의 저작권은 해당 언론사에 있으며, 제목을 누르면 원문으로 이동합니다.</span>
+  </div>
+</footer>
+
+</body>
+</html>
