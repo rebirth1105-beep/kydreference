@@ -124,6 +124,32 @@ h2{font-size:clamp(26px,4.2vw,38px);line-height:1.3}
 .rs.lead p{color:var(--band-muted)}
 .punch{margin:32px 0 0;font-family:var(--display);font-weight:700;font-size:clamp(20px,3vw,26px);line-height:1.45}
 
+/* before / after */
+.ba-grid{margin-top:36px;display:grid;grid-template-columns:1fr 48px 1fr;gap:12px;align-items:stretch}
+.ba-card{border-radius:16px;padding:26px;display:grid;gap:16px;align-content:start;min-width:0}
+.ba-card.before{background:var(--soft);border:1px dashed var(--line);color:var(--muted)}
+.ba-card.after{background:var(--card);border:2px solid var(--accent);box-shadow:0 24px 60px -34px rgba(31,79,216,.55)}
+.ba-tag{justify-self:start;font-size:13px;font-weight:700;letter-spacing:.04em;padding:5px 12px;border-radius:999px;background:var(--line);color:var(--muted)}
+.after .ba-tag{background:var(--accent);color:var(--accent-ink)}
+.ba-q{font-weight:700;color:var(--ink);border:1.5px solid var(--line);border-radius:999px;padding:9px 16px;background:var(--bg)}
+.after .ba-q{border-color:var(--accent)}
+.ba-res{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.ba-res li{display:grid;gap:2px;padding:12px 14px;border-radius:10px;background:var(--bg);border:1px solid var(--line);min-width:0}
+.ba-res .src{font-size:12px;color:var(--muted)}
+.ba-res .t{font-size:15px;font-weight:500;line-height:1.45}
+.before .ba-res .t{color:var(--muted)}
+.ba-res .none{display:block;text-align:center;font-size:14px;border-style:dashed;background:transparent;color:var(--muted)}
+.ba-res .hit{border:2px solid var(--mark);background:var(--card)}
+.ba-res .hit .t{color:var(--accent);font-weight:700}
+.ba-res .ai .src{color:var(--accent);font-weight:700}
+.ba-pts{list-style:none;margin:0;padding:16px 0 0;border-top:1px solid var(--line);display:grid;gap:8px;font-size:15px}
+.ba-pts li{display:grid;grid-template-columns:20px 1fr;gap:6px}
+.before .ba-pts li::before{content:"✕";color:var(--muted)}
+.after .ba-pts li::before{content:"✓";color:var(--ok);font-weight:900}
+.after .ba-pts b{color:var(--ink)}
+.ba-arrow{display:grid;place-items:center;font-size:28px;font-weight:900;color:var(--accent)}
+.ba-note{margin:16px 0 0;font-size:13px;color:var(--muted)}
+
 /* products */
 .prods{margin-top:36px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .prod{border:1px solid var(--line);border-radius:14px;padding:26px;display:flex;flex-direction:column;gap:10px;background:var(--card);min-width:0}
@@ -195,6 +221,8 @@ footer p{margin:4px 0}
 @media (max-width:860px){
   .hero .wrap,.ask .wrap{grid-template-columns:1fr;gap:36px}
   .prods{grid-template-columns:1fr}
+  .ba-grid{grid-template-columns:1fr}
+  .ba-arrow{transform:rotate(90deg);height:32px}
   .reasons{grid-template-columns:1fr 1fr}
   .rs{grid-column:span 1}
   .rs.lead,.rs.ai{grid-column:1/-1}
@@ -261,6 +289,45 @@ footer p{margin:4px 0}
       </div>
     </div>
     <p class="punch">기사 한 건이 아니라,<br>고객이 확인할 때 보여 줄 <span class="mk">신뢰의 근거</span>를 삽니다.</p>
+  </div>
+</section>
+
+<section class="ba">
+  <div class="wrap">
+    <p class="eyebrow">Before · After</p>
+    <h2>보도 한 건으로<br>이렇게 달라집니다.</h2>
+    <div class="ba-grid">
+      <div class="ba-card before">
+        <div class="ba-tag">보도 전</div>
+        <div class="ba-q">○○세무회계 대표</div>
+        <ul class="ba-res">
+          <li><span class="src">지도</span><span class="t">○○세무회계 · 영업시간 · 길찾기</span></li>
+          <li><span class="src">블로그</span><span class="t">3년 전 방문 후기 1건</span></li>
+          <li class="none">대표가 어떤 사람인지 알 수 있는 자료가 없습니다</li>
+        </ul>
+        <ul class="ba-pts">
+          <li>고객이 다른 곳과 비교만 하다 떠남</li>
+          <li>AI에게 물어도 이름이 나오지 않음</li>
+          <li>상담 때마다 처음부터 경력 설명</li>
+        </ul>
+      </div>
+      <div class="ba-arrow" aria-hidden="true">→</div>
+      <div class="ba-card after">
+        <div class="ba-tag">보도 후</div>
+        <div class="ba-q">○○세무회계 대표</div>
+        <ul class="ba-res">
+          <li class="hit"><span class="src">대한청년일보</span><span class="t">“숫자 너머를 봅니다” ○○세무회계 대표 인터뷰</span></li>
+          <li><span class="src">제휴 언론사</span><span class="t">○○세무회계, 중소기업 전문 세무 컨설팅으로 주목</span></li>
+          <li class="ai"><span class="src">AI 답변</span><span class="t">“대한청년일보 인터뷰에 따르면 ○○세무회계는…”</span></li>
+        </ul>
+        <ul class="ba-pts">
+          <li><b>검색하면</b> 기사가 먼저 보입니다</li>
+          <li><b>AI에게 물으면</b> 기사를 근거로 답합니다</li>
+          <li><b>영업할 때</b> 기사 링크 하나로 끝납니다</li>
+        </ul>
+      </div>
+    </div>
+    <p class="ba-note">이해를 돕기 위한 예시 화면입니다. 실제 검색 결과와 AI 답변은 검색 시점과 서비스에 따라 다릅니다.</p>
   </div>
 </section>
 
