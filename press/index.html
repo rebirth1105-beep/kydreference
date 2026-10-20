@@ -143,7 +143,8 @@ h2{font-size:clamp(26px,4.2vw,38px);line-height:1.3}
 .ba-res .hit .t{color:var(--accent);font-weight:700}
 .ba-res .ai .src{color:var(--accent);font-weight:700}
 .ba-pts{list-style:none;margin:0;padding:16px 0 0;border-top:1px solid var(--line);display:grid;gap:8px;font-size:15px}
-.ba-pts li{display:grid;grid-template-columns:20px 1fr;gap:6px}
+.ba-pts li{position:relative;padding-left:26px}
+.ba-pts li::before{position:absolute;left:0;top:0}
 .before .ba-pts li::before{content:"✕";color:var(--muted)}
 .after .ba-pts li::before{content:"✓";color:var(--ok);font-weight:900}
 .after .ba-pts b{color:var(--ink)}
