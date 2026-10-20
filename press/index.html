@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="브랜드 기사 · 전문가 칼럼 · 보도자료 · 주요 언론사 송출. 검색했을 때 신뢰할 수 있는 브랜드로 보이게.">
+<meta property="og:title" content="대한청년일보 언론홍보">
+<meta property="og:description" content="고객은 계약 전에 검색합니다. 브랜드 기사 · 전문가 칼럼 · 보도자료 · 주요 언론사 송출">
+<meta property="og:image" content="https://rebirth1105-beep.github.io/kydreference/press/hero-search.jpg">
+<meta property="og:type" content="website">
+<title>대한청년일보 언론홍보</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@500;700&family=Noto+Sans+KR:wght@400;500;700;900&display=swap">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font-family:system-ui,sans-serif;font-size:14px}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<style>
+/* Layout: 검색 결과 화면을 히어로로 세우고, 그 아래를 좁은 단 하나로 짧게 끊어 내려가는 판매 페이지 */
+:root{
+  --bg:#ffffff;
+  --soft:#f3f5f9;
+  --ink:#10141c;
+  --muted:#5b6474;
+  --line:#e2e6ee;
+  --accent:#1f4fd8;
+  --accent-ink:#ffffff;
+  --mark:#ffe45c;
+  --band:#10141c;
+  --band-fg:#f4f6fa;
+  --band-muted:#a3acbd;
+  --card:#ffffff;
+  --ok:#0f8a4b;
+  --display:"IBM Plex Sans KR","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --body:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e1117;--soft:#161b24;--ink:#eef1f6;--muted:#9aa3b4;--line:#262d3a;
+    --accent:#5b86ff;--accent-ink:#0b0f16;--mark:#6b5a00;--band:#05070b;--band-fg:#eef1f6;--band-muted:#8b94a6;--card:#141922;--ok:#3ccf83;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0e1117;--soft:#161b24;--ink:#eef1f6;--muted:#9aa3b4;--line:#262d3a;
+  --accent:#5b86ff;--accent-ink:#0b0f16;--mark:#6b5a00;--band:#05070b;--band-fg:#eef1f6;--band-muted:#8b94a6;--card:#141922;--ok:#3ccf83;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.65;word-break:keep-all;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+section{padding-block:72px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-0.02em}
+h2{font-size:clamp(26px,4.2vw,38px);line-height:1.3}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:0 0 12px}
+.lede{color:var(--muted);margin:14px 0 0;max-width:36em}
+.mk{background:linear-gradient(transparent 58%,var(--mark) 58%);padding:0 2px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:700 16px var(--body);padding:15px 26px;border-radius:10px;border:0;background:var(--accent);color:var(--accent-ink);text-decoration:none;cursor:pointer}
+.btn:focus-visible,input:focus-visible,textarea:focus-visible,.chip input:focus-visible+span{outline:3px solid var(--mark);outline-offset:2px}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
+
+/* top */
+.top{border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-block:14px;font-size:14px}
+.brand{font-family:var(--display);font-weight:700;font-size:17px}
+.brand small{font-family:var(--body);font-weight:500;color:var(--muted);font-size:12px;margin-left:6px}
+.top a.tel{font-weight:700;text-decoration:none;color:var(--accent);white-space:nowrap}
+
+/* hero */
+.hero{padding-block:56px 72px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(34px,6vw,58px);line-height:1.2;font-weight:700}
+.hero p.sub{font-size:18px;color:var(--muted);margin:20px 0 28px;max-width:28em}
+.hero .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.shot{position:relative;margin:0;min-width:0}
+.shot .q{position:absolute;top:0;left:20px;z-index:2;background:var(--card);border:2px solid var(--accent);border-radius:999px;padding:9px 20px 9px 40px;font-weight:700;box-shadow:0 10px 24px -12px rgba(16,20,28,.4)}
+.shot .q::before{content:"";position:absolute;left:16px;top:50%;width:11px;height:11px;margin-top:-8px;border:2.5px solid var(--accent);border-radius:50%}
+.shot .q::after{content:"";position:absolute;left:28px;top:50%;width:7px;height:2.5px;margin-top:4px;background:var(--accent);transform:rotate(45deg)}
+.shot .caret{display:inline-block;width:2px;height:1em;background:var(--accent);vertical-align:-2px;margin-left:3px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.shot .win{display:block;text-decoration:none;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 30px 70px -32px rgba(16,20,28,.45);transition:transform .2s}
+.shot .win:hover{transform:translateY(-3px)}
+.shot .chrome{display:flex;align-items:center;gap:6px;padding:10px 14px;background:var(--soft);border-bottom:1px solid var(--line)}
+.shot .chrome i{width:9px;height:9px;border-radius:50%;background:var(--line)}
+.shot .chrome span{margin-left:10px;flex:1;min-width:0;font-size:12px;color:var(--muted);background:var(--bg);border-radius:6px;padding:3px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.shot .view{background:#202124}
+.shot .view img{display:block;width:100%;height:auto}
+.shot .badge{position:absolute;right:-8px;top:46%;z-index:2;background:var(--mark);color:#10141c;font-weight:700;font-size:13px;padding:8px 14px;border-radius:999px;box-shadow:0 10px 24px -10px rgba(16,20,28,.45)}
+@media (max-width:560px){.shot .badge{position:static;display:inline-block;margin-top:12px}}
+.shot figcaption{margin-top:12px;font-size:13px;color:var(--muted)}
+.shot figcaption b{color:var(--ink);margin-right:6px}
+.shot figcaption a{color:var(--accent);font-weight:700;text-decoration:none}
+
+/* why */
+.why{background:var(--soft)}
+.vs{margin-top:36px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.vs > div{border-radius:14px;padding:26px;min-width:0}
+.vs .ad{background:var(--card);border:1px solid var(--line)}
+.vs .art{background:var(--band);color:var(--band-fg)}
+.vs h3{font-size:20px;margin-bottom:14px}
+.vs ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.vs li{display:grid;grid-template-columns:22px 1fr;gap:8px;line-height:1.5}
+.vs .ad li{color:var(--muted)}
+.vs .ad li::before{content:"–";color:var(--muted)}
+.vs .art li::before{content:"✓";color:var(--mark);font-weight:900}
+.vs .art li b{color:#fff}
+.reasons{margin-top:36px;display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.rs{grid-column:span 2;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;display:grid;gap:8px;align-content:start;min-width:0}
+.rs{grid-column:span 3}
+.rs.ai{grid-column:1/-1;grid-template-columns:1fr 300px;gap:40px;align-items:center;padding:36px;border:2px solid var(--accent)}
+.rs.ai h3{font-size:clamp(24px,3.2vw,32px);line-height:1.35}
+.rs.ai .txt{display:grid;gap:12px;min-width:0}
+.rs.ai p{font-size:16px}
+.rs.ai .proof{font-size:14px;padding:12px 14px;border-radius:10px;background:var(--soft)}
+.rs.ai .proof b{color:var(--accent);margin-right:6px}
+.phone-shot{margin:0;border-radius:22px;overflow:hidden;border:6px solid var(--band);background:#fff;box-shadow:0 24px 50px -28px rgba(16,20,28,.5);max-width:100%}
+.phone-shot img{display:block;width:100%;height:auto}
+.rs.lead{background:var(--band);color:var(--band-fg);border-color:var(--band)}
+.rs .no{font-family:var(--display);font-weight:700;font-size:13px;color:var(--accent);letter-spacing:.06em}
+.rs.lead .no{color:var(--mark)}
+.rs h3{font-size:20px;line-height:1.4}
+.rs p{margin:0;font-size:15px;color:var(--muted);line-height:1.6}
+.rs.lead p{color:var(--band-muted)}
+.punch{margin:32px 0 0;font-family:var(--display);font-weight:700;font-size:clamp(20px,3vw,26px);line-height:1.45}
+
+/* products */
+.prods{margin-top:36px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.prod{border:1px solid var(--line);border-radius:14px;padding:26px;display:flex;flex-direction:column;gap:10px;background:var(--card);min-width:0}
+.prod .tag{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.04em}
+.prod h3{font-size:22px}
+.prod p{margin:0;color:var(--muted);font-size:15px;flex:1}
+.prod .price{font-family:var(--display);font-weight:700;font-size:34px;letter-spacing:-0.02em;font-variant-numeric:tabular-nums}
+.prod .price small{font-size:16px;margin-left:2px}
+.prod.best{border:2px solid var(--accent)}
+.incl{margin-top:16px;border-radius:14px;background:var(--soft);padding:20px 24px;display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;font-size:15px}
+.incl b{font-family:var(--display)}
+.incl span{display:inline-flex;gap:6px;align-items:center}
+.incl span::before{content:"✓";color:var(--ok);font-weight:900}
+
+/* media */
+.media{background:var(--band);color:var(--band-fg)}
+.media .eyebrow{color:var(--mark)}
+.media .lede{color:var(--band-muted)}
+.tiers{margin-top:36px;display:grid;gap:12px}
+.tier{display:grid;grid-template-columns:200px 1fr auto;gap:20px;align-items:center;padding:22px 24px;border-radius:14px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)}
+.tier .nm{font-family:var(--display);font-weight:700;font-size:19px}
+.tier .nm small{display:block;font-family:var(--body);font-weight:500;font-size:13px;color:var(--band-muted)}
+.tier .ex{color:var(--band-muted);font-size:15px;min-width:0}
+.tier .pr{font-family:var(--display);font-weight:700;font-size:26px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.media .note{font-size:13px;color:var(--band-muted);margin:18px 0 0}
+
+/* refs */
+.refs{margin-top:36px;display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.ref{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;border:1px solid var(--line);border-radius:14px;text-decoration:none;background:var(--card);min-width:0;transition:border-color .15s,transform .15s}
+.ref:hover{border-color:var(--accent);transform:translateY(-2px)}
+.ref .k{font-size:12px;font-weight:700;color:var(--accent);letter-spacing:.04em}
+.ref .n{font-weight:700;font-size:17px;margin-top:2px}
+.ref .s{font-size:14px;color:var(--muted)}
+.more{margin-top:12px;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 26px;border-radius:14px;background:var(--band);color:var(--band-fg);text-decoration:none;transition:transform .15s}
+.more:hover{transform:translateY(-2px)}
+.more .k{font-size:12px;font-weight:700;color:var(--mark);letter-spacing:.06em}
+.more .n{font-weight:700;font-size:17px;margin-top:2px}
+.more .go{font-weight:700;white-space:nowrap;color:var(--mark)}
+.ref .go{font-weight:700;color:var(--accent);white-space:nowrap}
+
+/* inquiry */
+.ask{background:var(--soft)}
+.ask .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:start}
+.phone{margin-top:28px;padding:20px 22px;border-radius:14px;background:var(--card);border:1px solid var(--line)}
+.phone .lbl{font-size:13px;color:var(--muted)}
+.phone .num{font-family:var(--display);font-weight:700;font-size:28px;letter-spacing:.01em;user-select:all;font-variant-numeric:tabular-nums}
+.phone .acts{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.phone .acts .btn{padding:10px 16px;font-size:14px}
+form{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px;display:grid;gap:18px;min-width:0}
+.f{display:grid;gap:6px}
+.f label,.f .lab{font-size:14px;font-weight:700}
+.f label em,.f .lab em{color:var(--accent);font-style:normal}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+input[type=text],input[type=tel],textarea{width:100%;font:16px var(--body);color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:10px;padding:12px 14px}
+textarea{min-height:110px;resize:vertical}
+input:focus,textarea:focus{border-color:var(--accent);outline:none}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.chip span{display:inline-block;padding:8px 14px;border-radius:999px;border:1.5px solid var(--line);font-size:14px;font-weight:500;cursor:pointer}
+.chip input:checked+span{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.err{color:#d23b3b;font-size:13px;min-height:1em}
+.done{border-radius:12px;padding:18px;background:var(--soft);font-size:15px}
+.done b{display:block;font-family:var(--display);font-size:18px;margin-bottom:4px}
+
+footer{border-top:1px solid var(--line);padding-block:28px;font-size:13px;color:var(--muted)}
+footer p{margin:4px 0}
+
+@media (max-width:860px){
+  .hero .wrap,.ask .wrap{grid-template-columns:1fr;gap:36px}
+  .prods{grid-template-columns:1fr}
+  .reasons{grid-template-columns:1fr 1fr}
+  .rs{grid-column:span 1}
+  .rs.lead,.rs.ai{grid-column:1/-1}
+  .rs.ai{grid-template-columns:1fr;padding:26px}
+  .phone-shot{max-width:320px;justify-self:center}
+  .tier{grid-template-columns:1fr auto}
+  .tier .ex{grid-column:1/-1;order:3}
+}
+@media (max-width:560px){
+  section{padding-block:56px}
+  .vs,.refs,.two,.reasons{grid-template-columns:1fr}
+  form{padding:20px}
+  .top .brand small{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brand">대한청년일보<small>언론홍보 · 스텝업마케팅</small></div>
+    <a class="tel" href="#ask">문의하기 →</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Press PR</p>
+      <h1>고객은 계약 전에<br><span class="mk">검색합니다.</span></h1>
+      <p class="sub">그때 기사가 뜨면 믿고, 안 뜨면 망설입니다. 대표님 회사를 기사 한 건으로 확인되는 브랜드로 만들어 드립니다.</p>
+      <div class="row">
+        <a class="btn" href="#ask">문의하기</a>
+      </div>
+    </div>
+    <figure class="shot">
+      <a class="win" href="https://www.koreayouthdaily.com/news/558236" target="_blank" rel="noopener">
+        <div class="chrome"><i></i><i></i><i></i><span>google.com/search?q=이원희+회계사</span></div>
+        <div class="view"><img src="hero-search.jpg" alt="구글 뉴스에서 이원희 회계사를 검색하면 대한청년일보 인터뷰가 첫 번째로 나오는 화면" width="745" height="366"></div>
+      </a>
+      <div class="badge">검색 첫 번째 결과 · 대한청년일보 인터뷰</div>
+      <figcaption><b>실제 구글 검색 화면</b> “이원희 회계사” 뉴스 검색 · <a href="https://www.koreayouthdaily.com/news/558236" target="_blank" rel="noopener">기사 보기 →</a></figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap">
+    <p class="eyebrow">Why Article</p>
+    <h2>광고는 끄면 사라지고,<br>기사는 검색에 남습니다.</h2>
+    <p class="lede">광고처럼 사라지는 콘텐츠가 아니라, 검색되고 설명되고 신뢰를 남기는 브랜드 자산이 되기 때문입니다.</p>
+    <div class="reasons">
+      <div class="rs lead"><span class="no">01</span><h3>검색될 때 신뢰를 만듭니다</h3><p>고객은 결제·계약 전에 먼저 검색합니다. 검색 결과에 정리된 기사가 있으면 첫인상이 달라집니다.</p></div>
+      <div class="rs"><span class="no">02</span><h3>말이 아닌 근거가 생깁니다</h3><p>대표의 경력·철학·성과를 제3자 시선의 콘텐츠로 정리해 전문성을 설명할 수 있습니다.</p></div>
+      <div class="rs"><span class="no">03</span><h3>영업이 쉬워집니다</h3><p>상담·소개·제안 과정에서 긴 설명 대신 기사 링크 하나로 신뢰 자료를 전달합니다.</p></div>
+      <div class="rs"><span class="no">04</span><h3>한 번 만들고 계속 씁니다</h3><p>홈페이지·SNS·제안서·소개 자료 등 여러 접점에서 반복 활용하는 장기 콘텐츠 자산이 됩니다.</p></div>
+      <div class="rs ai">
+        <div class="txt">
+          <span class="no">05</span>
+          <h3>AI도 언론 기사를<br><span class="mk">믿을 수 있는 근거</span>로 씁니다</h3>
+          <p>이제 고객은 AI에게도 묻습니다. “○○ 전문가 추천해 줘.” AI는 언론 기사를 신뢰할 수 있는 데이터로 보고, 답변의 근거로 인용합니다.</p>
+          <p class="proof"><b>실제 화면</b>구글 AI 모드에 “두바이 부동산 전문가 추천”을 물었더니, 대한청년일보 인터뷰를 근거로 전문가를 추천했습니다.</p>
+        </div>
+        <figure class="phone-shot"><img src="ai-cite.jpg" alt="구글 AI 모드가 대한청년일보 인터뷰를 근거로 두바이 부동산 전문가를 추천한 화면" width="640" height="918"></figure>
+      </div>
+    </div>
+    <p class="punch">기사 한 건이 아니라,<br>고객이 확인할 때 보여 줄 <span class="mk">신뢰의 근거</span>를 삽니다.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Products</p>
+    <h2>목적에 맞게 고르세요.</h2>
+    <p class="lede">세 상품 모두 대한청년일보에 원문을 발행하고, 200여 개 제휴 언론사 배포망으로 함께 송출합니다.</p>
+    <div class="prods">
+      <div class="prod">
+        <div class="tag">기업 PR · 공식 기록</div>
+        <h3>사실기사 · 보도자료</h3>
+        <p>행사, 수상, 출시, 투자 소식. 주신 자료를 기사 형식으로 정리합니다.</p>
+        <div class="price">15<small>만원</small></div>
+      </div>
+      <div class="prod best">
+        <div class="tag">브랜딩 · 대표 인터뷰</div>
+        <h3>브랜드 기사</h3>
+        <p>대표 인터뷰로 브랜드의 스토리와 차별점, 전문성을 기사로 만듭니다.</p>
+        <div class="price">30<small>만원</small></div>
+      </div>
+      <div class="prod">
+        <div class="tag">전문성 · 퍼스널브랜딩</div>
+        <h3>전문가 칼럼</h3>
+        <p>주제 선정부터 논리 구성, 집필까지. 대표님 이름으로 전문 칼럼을 냅니다.</p>
+        <div class="price">40<small>만원</small></div>
+      </div>
+    </div>
+    <div class="incl">
+      <b>공통 포함</b>
+      <span>기획</span><span>원고 작성</span><span>수정 1회</span><span>대한청년일보 게재</span><span>제휴 배포망 송출</span>
+    </div>
+  </div>
+</section>
+
+<section class="media">
+  <div class="wrap">
+    <p class="eyebrow">Media Pick</p>
+    <h2>원하는 언론사를<br>직접 고를 수도 있습니다.</h2>
+    <p class="lede">특정 매체 게재가 필요하면 매체 지정 상품을 선택하세요. 네이버·다음·네이트 뉴스 제휴 매체로 집행합니다.</p>
+    <div class="tiers">
+      <div class="tier">
+        <div class="nm">메이저 종합지<small>인지도 · 브랜드 신뢰</small></div>
+        <div class="ex">서울신문 · 헤럴드경제 · 국민일보 · 아시아경제 · 한국일보 · 중앙일보 · 동아일보 외</div>
+        <div class="pr">45만원~</div>
+      </div>
+      <div class="tier">
+        <div class="nm">경제 · 종합지<small>신뢰 · 비용 효율</small></div>
+        <div class="ex">아시아투데이 · 이투데이 · 월간중앙 · 포브스코리아 · 한경비즈니스 · 세계일보 외</div>
+        <div class="pr">30만원~</div>
+      </div>
+      <div class="tier">
+        <div class="nm">온라인 · 전문지<small>업종 적합 · 노출 확대</small></div>
+        <div class="ex">공감신문 · 내외경제TV · 컨슈머타임스 · 뉴스핌 · 국제뉴스 · 파이낸스투데이 외</div>
+        <div class="pr">15만원~</div>
+      </div>
+    </div>
+    <p class="note">매체별 비용은 다릅니다. 업종·기사 내용과 매체 정책에 따라 게재 가능 여부와 비용이 달라질 수 있습니다.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">References</p>
+    <h2>결과물은 실제 기사로 확인하세요.</h2>
+    <div class="refs">
+      <a class="ref" href="https://www.koreayouthdaily.com/news/467356" target="_blank" rel="noopener">
+        <div><div class="k">브랜드 기사</div><div class="n">유어헤븐</div><div class="s">브랜드 세계관과 제품 스토리를 기사로</div></div>
+        <span class="go">보기 →</span>
+      </a>
+      <a class="ref" href="https://www.koreayouthdaily.com/news/529421" target="_blank" rel="noopener">
+        <div><div class="k">전문가 칼럼</div><div class="n">서진욱의 GEO·AI Search</div><div class="s">AI 검색 시대, 기업은 왜 GEO에 주목해야 하는가</div></div>
+        <span class="go">보기 →</span>
+      </a>
+      <a class="ref" href="https://www.koreayouthdaily.com/news/431474" target="_blank" rel="noopener">
+        <div><div class="k">사실기사 · 보도자료</div><div class="n">어서노션 서바이벌</div><div class="s">행사의 핵심 사실과 참여 가치를 보도</div></div>
+        <span class="go">보기 →</span>
+      </a>
+      <a class="ref" href="https://www.kairnews.com/news/433772" target="_blank" rel="noopener">
+        <div><div class="k">제휴 언론사 송출</div><div class="n">글로벌 인터뷰 기사</div><div class="s">외부 제휴 매체 재송출 사례</div></div>
+        <span class="go">보기 →</span>
+      </a>
+    </div>
+    <a class="more" href="https://rebirth1105-beep.github.io/kydreference/stories/" target="_blank" rel="noopener">
+      <div><div class="k">대한청년일보 Articles</div><div class="n">인물 인터뷰 · 스트레이트 뉴스 · 전문가 칼럼 기사 더 보기</div></div>
+      <span class="go">기사 모음 →</span>
+    </a>
+  </div>
+</section>
+
+<section class="ask" id="ask">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Consultation</p>
+      <h2>기업의 이야기를<br>기사로 설계합니다.</h2>
+      <p class="lede">홍보 목적과 일정을 남겨 주시면, 브랜드에 맞는 기사 유형과 매체 구성을 제안해 드립니다.</p>
+      <div class="phone">
+        <div class="lbl">전화 · 문자 문의</div>
+        <div class="num" id="num">010-9123-2789</div>
+        <div class="acts">
+          <a class="btn" href="tel:01091232789">전화 걸기</a>
+          <button class="btn ghost" type="button" id="copy">번호 복사</button>
+        </div>
+      </div>
+    </div>
+
+    <form id="form" novalidate>
+      <div class="two">
+        <div class="f"><label for="company">회사명 <em>*</em></label><input type="text" id="company" name="company" autocomplete="organization" placeholder="예) 스텝업컴퍼니"></div>
+        <div class="f"><label for="name">담당자 <em>*</em></label><input type="text" id="name" name="name" autocomplete="name" placeholder="성함 · 직함"></div>
+      </div>
+      <div class="f"><label for="phone">연락처 <em>*</em></label><input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="010-0000-0000"></div>
+      <div class="f">
+        <span class="lab">관심 분야</span>
+        <div class="chips">
+          <label class="chip"><input type="checkbox" id="p1" name="product" value="사실기사·보도자료"><span>사실기사·보도자료</span></label>
+          <label class="chip"><input type="checkbox" id="p2" name="product" value="브랜드 기사"><span>브랜드 기사</span></label>
+          <label class="chip"><input type="checkbox" id="p3" name="product" value="전문가 칼럼"><span>전문가 칼럼</span></label>
+          <label class="chip"><input type="checkbox" id="p4" name="product" value="매체 지정"><span>매체 지정</span></label>
+          <label class="chip"><input type="checkbox" id="p5" name="product" value="맞춤 제안 요청"><span>맞춤 제안 요청</span></label>
+        </div>
+      </div>
+      <div class="f"><label for="msg">문의 내용</label><textarea id="msg" name="msg" placeholder="홍보 목적, 예산, 원하는 일정 등을 적어 주세요."></textarea></div>
+      <div class="err" id="err" role="alert"></div>
+      <button class="btn" type="submit" id="submit">문의 보내기</button>
+      <div class="done" id="done" hidden></div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><b>대한청년일보</b> The Korea Youth Daily · 언론홍보 · 브랜드 콘텐츠 · 미디어 PR</p>
+    <p>각 언론사의 편집·게재 정책에 따라 실제 게재 매체 수는 달라질 수 있습니다. 원고 난이도·취재 범위에 따라 추가 비용이 발생할 수 있습니다. 포털 노출 여부·위치·기간은 각 매체와 포털 정책을 따릅니다.</p>
+  </div>
+</footer>
+
+<script>
+// 문의 접수 주소 (구글 Apps Script 웹앱 등). 비어 있으면 전화·문자 안내로 대체
+const ENDPOINT = '';
+
+const $ = (id) => document.getElementById(id);
+
+$('copy').addEventListener('click', () => {
+  const done = () => { $('copy').textContent = '복사됨'; setTimeout(() => $('copy').textContent = '번호 복사', 1500); };
+  const fallback = () => { const r = document.createRange(); r.selectNodeContents($('num')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); };
+  try { navigator.clipboard.writeText('010-9123-2789').then(done, fallback); } catch (e) { fallback(); }
+});
+
+$('form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const data = {
+    company: $('company').value.trim(),
+    name: $('name').value.trim(),
+    phone: $('phone').value.trim(),
+    products: [...document.querySelectorAll('input[name=product]:checked')].map(i => i.value).join(', '),
+    msg: $('msg').value.trim(),
+    page: '대한청년일보 언론홍보',
+  };
+  if (!data.company || !data.name || !data.phone) { $('err').textContent = '회사명, 담당자, 연락처를 입력해 주세요.'; return; }
+  if (!/^[0-9\-\s+]{9,}$/.test(data.phone)) { $('err').textContent = '연락처를 숫자로 입력해 주세요. 예) 010-1234-5678'; return; }
+  $('err').textContent = '';
+
+  const done = $('done');
+  if (!ENDPOINT) {
+    done.innerHTML = '<b>지금은 전화·문자로 받고 있어요.</b>010-9123-2789로 회사명과 문의 내용을 보내 주시면 바로 연락드립니다.';
+    done.hidden = false;
+    return;
+  }
+  $('submit').disabled = true; $('submit').textContent = '보내는 중…';
+  try {
+    await fetch(ENDPOINT, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(data) });
+    done.innerHTML = '<b>문의가 접수됐습니다.</b>' + data.name + '님, 남겨 주신 연락처로 곧 연락드리겠습니다.';
+    done.hidden = false;
+    $('submit').hidden = true;
+  } catch (err) {
+    $('err').textContent = '전송하지 못했습니다. 010-9123-2789로 전화나 문자 주세요.';
+    $('submit').disabled = false; $('submit').textContent = '문의 보내기';
+  }
+});
+</script>
+
+</body>
+</html>
